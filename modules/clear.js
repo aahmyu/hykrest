@@ -1,17 +1,17 @@
-const fs = require("fs");
+const rw = require("./rw.js");
 
 
 function clearList(request, response) {
-    fs.writeFile('./list.json', '', 'utf8', function(error) {
+    rw.fileWrite('./list.json', '', function(error) {
         if (error) {
             console.error(error);
         }
         response.json({
-            result: 'ok'
+            result: 'The list has been cleared'
         });
     });
 }
 
 module.exports = {
-  clearList  
+    clearList
 };
