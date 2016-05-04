@@ -21,19 +21,8 @@ function fileRead(fileName, callback) {
     });
 }
 
-function append(fileName, item, result) {
-    fs.appendFile(fileName, item, 'utf8', function(error) {
-        if (error) {
-            console.error(error);
-        }
-        else {
-            result;
-        }
-    });
-}
 
 module.exports = {
     fileRead,
-    append,
     fileWrite
 };
